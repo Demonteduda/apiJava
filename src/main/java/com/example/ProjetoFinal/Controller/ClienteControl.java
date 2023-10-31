@@ -1,7 +1,7 @@
-package Controller;
+package com.example.ProjetoFinal.Controller;
 
-import Model.Cliente;
-import Repository.ClienteRepository;
+import com.example.ProjetoFinal.Model.Cliente;
+import com.example.ProjetoFinal.Repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,9 +23,9 @@ public class ClienteControl {
     }
 
     @GetMapping("/todoscli/codigo/{codigo}")
-    public List<Cliente> buscarporCodigo (@PathVariable ("codigo") int codigo)
+    public Optional<Cliente> buscarporCodigo (@PathVariable ("codigo") int codigo)
     {
-        return alcli.findByCodigo(codigo);
+        return alcli.findById(codigo);
     }
 
     @GetMapping("/todoscli/nome/{nome}")
@@ -46,7 +46,7 @@ public class ClienteControl {
         return alcli.findByNomeEmail(nome,email);
     }
 
-    @PostMapping("/inserir")
+    @PostMapping("/inserircli")
     public void inserirCliente(@RequestBody Cliente cli)
     {
         alcli.save(cli);
@@ -64,7 +64,7 @@ public class ClienteControl {
         alcli.deleteById(codigo);
     }
 
-    @PutMapping("/atualizar")
+    @PutMapping("/atualizarcli")
     public void atualizarCliente (@RequestBody Cliente cli)
     {
         alcli.save(cli);

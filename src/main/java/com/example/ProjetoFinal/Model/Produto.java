@@ -1,4 +1,4 @@
-package Model;
+package com.example.ProjetoFinal.Model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table
+@Table(name="produtoSpring")
 public class Produto {
 
     @Id
