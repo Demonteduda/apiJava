@@ -21,12 +21,7 @@ public class Produto {
     @Column
     private double preco;
 
-    public Produto(int codP, String descricao, String marca, double preco) {
-        this.codP = codP;
-        this.descricao = descricao;
-        this.marca = marca;
-        this.preco = preco;
-    }
+
 
     public int getCodP() {
         return codP;

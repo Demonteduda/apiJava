@@ -30,8 +30,8 @@ public class ProdutoControl {
         return alpro.findAll();
     }
 
-    @GetMapping("/todosProd/cod/{código}")
-    public Optional<Produto> buscarPorCod(@PathVariable("codigo") int codp)
+    @GetMapping("/todosProd/cod/{codp}")
+    public Optional<Produto> buscarPorCod(@PathVariable("codp") int codp)
     {
         return alpro.findById(codp);
     }
@@ -54,7 +54,7 @@ public class ProdutoControl {
         return alpro.buscarPorMarca(marca);
     }
 
-    @GetMapping("todosProd/marcaepreco/{marca}{preco}")
+    @GetMapping("todosProd/marcaepreco/{marca}/{preco}")
     public List<Produto> buscaMarcaePreco(@PathVariable("marca") String marca, @PathVariable("preco") double preco)
     {
     return alpro.buscarMarcaePreco(marca, preco);
@@ -66,8 +66,8 @@ public class ProdutoControl {
         alpro.delete(prod);
     }
 
-    @DeleteMapping("/removerProd/cod/{codigo}")
-    public  void removerporCod(@PathVariable("codigo")int codig)
+    @DeleteMapping("/removerProd/cod/{codp}")
+    public  void removerporCod(@PathVariable("codp")int codig)
     {
         alpro.deleteById(codig);
     }

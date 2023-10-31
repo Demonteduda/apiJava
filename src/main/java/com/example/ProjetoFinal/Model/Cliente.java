@@ -19,11 +19,6 @@ public class Cliente {
     @Column
     private String email;
 
-    public Cliente(int cod, String nome, String email) {
-        this.cod = cod;
-        this.nome = nome;
-        this.email = email;
-    }
 
     public int getCod() {
         return cod;
